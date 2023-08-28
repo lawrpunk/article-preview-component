@@ -1,0 +1,275 @@
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  background: var(--Light-Grayish-Blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+article {
+  width: 800px;
+  height: 320px;
+  background: white;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1.3fr 2fr;
+}
+
+.article-picture {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.article-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem 0 0 1rem;
+  object-position: 15% center;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 320px; */
+  padding: 3rem 3rem 1.4rem 3rem;
+  overflow: visible;
+}
+
+.article-content-item {
+  margin-bottom: 1.3rem;
+}
+
+.header {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+.description {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--Desaturated-Dark-Blue);
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.share-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-avatar {
+  width: 45px;
+  border-radius: 100%;
+  margin-right: 1rem;
+}
+
+.share-data {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.share-data h5 {
+  font-size: 0.82rem;
+  font-weight: bold;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+.share-data p {
+  font-size: 0.8rem;
+  color: var(--Desaturated-Dark-Blue);
+}
+
+.share-icons-mobile {
+  display: none;
+}
+
+.share-icon-box {
+  background: var(--Light-Grayish-Blue);
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.share-icon {
+  width: 17px;
+}
+
+.share-icon-box .popuptext {
+  visibility: hidden;
+  width: 250px;
+  height: 55px;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  color: var(--Grayish-Blue);
+  text-align: center;
+  border-radius: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  transform: translate(0%, -135%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  letter-spacing: 0.4rem;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+}
+
+/* Popup arrow */
+.share-icon-box .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 98%;
+  left: 50%;
+  margin-left: -12px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: var(--Very-Dark-Grayish-Blue) transparent transparent
+    transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.share-icon-box .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 934px) {
+  article {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-picture img {
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .article-content {
+    padding: 2rem;
+    overflow: visible;
+  }
+
+  .article-content-item {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 660px) {
+  article {
+    width: 350px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .article-picture {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .article-content {
+    padding: 0;
+    overflow: visible;
+  }
+
+  .article-content-item {
+    padding: 1rem 2rem 0 2rem;
+    margin-bottom: 0;
+  }
+
+  .header {
+    font-size: 0.76rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .share {
+    transform: translate(0%, 50%);
+    height: 4.1rem;
+    padding: 0 2rem 1.5rem 2rem;
+  }
+
+  .share-mobile {
+    background: var(--Very-Dark-Grayish-Blue);
+    padding: 0;
+  }
+
+  .share-icons-mobile {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    letter-spacing: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--Grayish-Blue);
+    margin-left: 1.7rem;
+  }
+
+  .share-icon-box-mobile {
+    margin-right: 2rem;
+  }
+
+  .hide {
+    display: none;
+  }
+}
